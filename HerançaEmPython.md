@@ -26,4 +26,62 @@ Existem 4 pilares no conceito Programação Orientada a Objeto:
 
 <img width="1498" height="916" alt="image" src="https://github.com/user-attachments/assets/b47228a4-0939-4588-88c6-049ffe83dac2" />
 
+Tradução da imagem para a linguagem Python:
+```
+from rich import print, inspect
 
+class Pessoa:
+    def __init__(self, nome="", idade=0):
+        self.nome = nome
+        self.idade = idade
+
+    def fazer_aniversario(self):
+        self.idade += 1
+
+
+class Aluno(Pessoa):                    #aqui a classe "Pessoa" entre parênteses liga os atributos da classe mãe
+    def __init__(self, nome, idade, curso, turma):
+        super().__init__(nome, idade)           #comando para trazer os atributos solicidades da classe mãe
+        self.curso = curso
+        self.turma = turma
+
+    def fazer_matricula(self):
+        print(f"{self.nome} acabou de fazer matrícula")
+
+
+class Professor(Pessoa):
+    def __init__(self, nome, idade, especialidade, nivel):
+        super().__init__(nome, idade)
+        self.especialidade = especialidade
+        self.nivel = nivel
+
+    def dar_aula(self):
+        print(f"Prof. {self.nome} começou a dar aula")
+
+
+class Funcionario(Pessoa):
+    def __init__(self, nome, idade, cargo, setor):
+        super().__init__(nome, idade)
+        self.cargo = cargo
+        self.setor = setor
+
+    def bater_ponto(self):
+        print(f"{self.nome} acabou de bater ponto.")
+
+
+a1 = Aluno("José", 17, "Informática", "T01")
+a1.fazer_aniversario()
+a1.fazer_matricula()
+inspect(a1, methods=True)
+
+p1 = Professor("Samuel", 37, "Biologa", "Mestrado")
+p1.fazer_aniversario()
+p1.dar_aula()
+#inspect(p1, methods=True)
+
+f1 = Funcionario("CLáudia", 27, "Secretária", "Secretaria")
+f1.fazer_aniversario()
+f1.bater_ponto()
+#inspect(f1, methods=True)
+```
+*Esse exemplo foi usado como exercício (004)*
