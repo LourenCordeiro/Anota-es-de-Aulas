@@ -97,7 +97,14 @@ A prática de ignorar o irrelevante e se focar estritamente no essencial. Existe
 - Simplificação
 - Segurança
 
-> Classe Abstrata: funciona como uma base para as subclasses se transformarem em objetos.(não serve para gerar objetos)
-> Método Abstrato: estão dentro de classes abstratas, obriga a subclasse a ter um método. (não possuem linhas de programação)
+> Classe Abstrata: funciona como uma base para as subclasses se transformarem em objetos(não serve para gerar objetos). Uma classe abstrata *nunca será instanciada*, já que ela será usada apenas como base para as subclasses. Uma classe abstrata pode ter métodos abstratos que deverão obrigatoriamente implementados nas subclasses, mas uma classe abstrata pode ter métodos concretos se eles funcionarem da mesma maneira para todos as subclasses(*DRY)
 
-DRY - Don't Repeat Yourself
+
+> Método Abstrato: estão dentro de classes abstratas, obriga a subclasse a ter um método, mas não descreve qual, ou seja, cada subclasse será obrigado a fazer o método, mas poderá ter características próprias. (não possuem linhas de programação). Deve ser escrito entre {} (ex: estudar () {abstract}. Quando criamos um conjunto de métodos abstratos, que estão dentro da classe abstrata, dizemos que estamos criando a interface pública da classe.
+
+<img width="1825" height="901" alt="image" src="https://github.com/user-attachments/assets/41baad93-bf15-4847-8395-23084779c535" />
+
+
+*DRY - Don't Repeat Yourself
+
+** ABC (Abstract Base Classes) ***
