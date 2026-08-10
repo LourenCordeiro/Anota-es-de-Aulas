@@ -85,3 +85,19 @@ f1.bater_ponto()
 #inspect(f1, methods=True)
 ```
 *Esse exemplo foi usado como exercício (004)*
+
+## **ABSTRAÇÃO**  
+
+A prática de ignorar o irrelevante e se focar estritamente no essencial. Existe abstração de dados, que acontece quando ignoramos informações desnecessárias para o escopo do projeto. Existe abstração de processos, quando não precisamos saber como um método faz seu trabalho, apenas sabe que ele existe pela interface.
+
+## Principais Vantagens  
+
+- Maior legibilidade (é mais fácil entender um código que está mais objetivo)
+- Padronização 
+- Simplificação
+- Segurança
+
+> Classe Abstrata: funciona como uma base para as subclasses se transformarem em objetos.(não serve para gerar objetos)
+> Método Abstrato: estão dentro de classes abstratas, obriga a subclasse a ter um método. (não possuem linhas de programação)
+
+DRY - Don't Repeat Yourself
