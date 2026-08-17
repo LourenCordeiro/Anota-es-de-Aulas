@@ -122,7 +122,7 @@ Visa manter a integridade do sistema, protegendo o estado interno do objeto cont
 
 Para conseguir realizar essa proteção, precisamos entender:  
 
-1- Visibilidade dos atributos: Existem três tipos de visibilidade para atributos ou métodos na linguagem POO:
+1- Visibilidade dos atributos. Existem três tipos de visibilidade para atributos ou métodos na linguagem POO:
 - Public >> +   (pode ser editado de qualquer forma)
 - Protected >> #  (pode editar dentro da classe e das filhas) 
 - Private >> -    (esse só pode ser visto e editado dentro da classe)
@@ -135,5 +135,8 @@ Para conseguir realizar essa proteção, precisamos entender:
 
 <img width="217" height="220" alt="image" src="https://github.com/user-attachments/assets/288aab40-dcbc-47f2-ae0c-3460aa360aff" />
 
-Acesso aos dados protegidos
+2- Acesso aos dados encapsulados/protegidos. Existem duas maneiras de permitir o acesso aos dados encapsulados:  
+
+- Uso de getters e setter (métodos assessores)
+- Uso de decorador @property (cria atributo validável)
 
