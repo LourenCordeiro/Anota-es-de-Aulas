@@ -107,4 +107,33 @@ A prática de ignorar o irrelevante e se focar estritamente no essencial. Existe
 
 *DRY - Don't Repeat Yourself
 
-** ABC (Abstract Base Classes) ***
+** ABC (Abstract Base Classes) ***  
+
+## ENCAPSULAMENTO ##  
+
+Visa manter a integridade do sistema, protegendo o estado interno do objeto contra interferência externa não regulamentada. Envolvemos a "estrutura" em uma cápsula que deixa exposto apenas o que é necessário.  
+
+## Principais Vantagens  
+
+- Segurança e controle
+- Facilidade de manutenção
+- Flexibilidade e reutilização
+- Redução de efeitos colaterais
+
+Para conseguir realizar essa proteção, precisamos entender:  
+
+1- Visibilidade dos atributos: Existem três tipos de visibilidade para atributos ou métodos na linguagem POO:
+- Public >> +   (pode ser editado de qualquer forma)
+- Protected >> #  (pode editar dentro da classe e das filhas) 
+- Private >> -    (esse só pode ser visto e editado dentro da classe)
+
+*Essa linguagem é utilizada pela programação orientada a objetos, e não é considerado no Python. No Python sobressai o uso do "Consenting Adults", ou seja liberdade com responsabilidade. No python se utiliza as seguinte estruturas:
+
+- Public >> Não tem alteração
+- Protected >> _ (adiciona o _ antes do atributo)
+- Private >> __ (duplo _ antes do atributo)
+
+<img width="217" height="220" alt="image" src="https://github.com/user-attachments/assets/288aab40-dcbc-47f2-ae0c-3460aa360aff" />
+
+Acesso aos dados protegidos
+
