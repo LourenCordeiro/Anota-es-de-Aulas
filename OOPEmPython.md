@@ -137,8 +137,103 @@ Para conseguir realizar essa proteção, precisamos entender:
 
 2- Acesso aos dados encapsulados/protegidos. Existem duas maneiras de permitir o acesso aos dados encapsulados:  
 
-- Uso de getters e setter (métodos assessores)
-- Uso de decorador @property (cria atributo validável)
+- Uso de getters e setter (métodos assessores) - Mais usado em linguagens clássicas
+- Uso de decorador @property (cria atributo validável) - Utilizada em linguagens modernas como o Python
+
+  visualização do @property
+  
+  <img width="329" height="287" alt="image" src="https://github.com/user-attachments/assets/b7974a74-ecff-410d-99a0-c2a99c88dc14" />
+
+
+EXEMPLO DE USO DOS MÉTODOS ASSESSORES
+
+```
+class Avaliacao:
+
+    def __init__(self, nome, disciplina, nota=0):
+        self.nome = nome
+        self.disciplina = disciplina
+        self._nota = nota           #Atributo protegido
+
+    #Métodos assessores
+    def get_nota(self):     #Método Getter
+        return self._nota
+
+    def set_nota(self, valor):  #Método Setter
+        if 0 <= valor <= 10:
+            self._nota = valor
+        else:
+            print("Nota inválida")
+```
+CHAMADA NO MAIN:
+
+```
+from exercicio009 import Avaliacao
+from rich import print, inspect
+
+def main():
+    av1 = Avaliacao("Pedro", "Matemática", 8.7)
+    av1.set_nota(14.4)
+    print(f"{av1.nome} tirou {av1.get_nota()} em {av1.disciplina}")
+    #inspect(av1, private=True) #Esse comando vai mostrar os dados privados
+
+
+
+
+if __name__ == '__main__':
+    main()
+```
+
+**Esse exemplo está presente no "exercicio009".
+
+EXEMPLO DE USO DO @PROPERTY
+
+```
+class Avaliacao:
+
+    def __init__(self, nome, disciplina, nota=0):
+        self.nome = nome
+        self.disciplina = disciplina
+        self._nota = nota           #Atributo protegido
+
+
+    #Criando Atributo Validável
+    @property
+    def nota(self):     #getter
+        return self._nota
+
+    @nota.setter 
+    def nota(self, valor):      #setter
+        if 0 <= valor <= 10:
+            self._nota = valor
+        else:
+            print("Nota inválida")
+
+
+    @nota.deletter   #Usa uma validação para excluir    
+    def nota(self):
+        pass
+```
+
+CHAMADA DO MAIN
+
+```
+from ex_property import Avaliacao
+from rich import print, inspect
+
+def main():
+    av1 = Avaliacao("Pedro", "Matemática")
+    av1.nota = 3.5
+    print(f"{av1.nome} tirou {av1.nota} em {av1.disciplina}")
+    inspect(av1, private=True) #Esse comando vai mostrar os dados privados
+
+
+
+
+if __name__ == '__main__':
+    main()
+```
+
 
 ## POLIMORFISMO ##
 
